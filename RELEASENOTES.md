@@ -1,8 +1,7 @@
-
 Version 3.3d21
 ====
 **Enhancements**
-* Use `/dev/urandom` rather than `/dev/random` as a source of some kind of randomness for the crtptographic nonce used in AirPlay password exchange, as `/dev/random` blocks occasionally. Please see [here](https://unix.stackexchange.com/questions/324209/when-to-use-dev-random-vs-dev-urandom) for a discussion of the merits of both. The effect of `/dev/random`'s blocking on Shairport Sync was to make the source of randomness somewhat less random. (By the way, you should never use an important password as an AirPlay password for Shairport Sync -- it is stored in Shairport Sync's configuration file in plain text.)
+* Use `/dev/urandom` rather than `/dev/random` as a source of some kind of randomness for the cryptographic "nonce" used in AirPlay password exchange, as `/dev/random` blocks occasionally. Please see [here](https://unix.stackexchange.com/questions/324209/when-to-use-dev-random-vs-dev-urandom) for a discussion of the merits of both. The effect of `/dev/random`'s blocking on Shairport Sync was to make the source of randomness somewhat less random. (By the way, you should never use an important password as an AirPlay password for Shairport Sync -- it is stored in Shairport Sync's configuration file in plain text.)
 
 Version 3.3d20
 ====
@@ -151,7 +150,7 @@ Version 3.2.d64
 Version 3.2.d63
 ====
 **Enhancement**
-* An [MQTT](https://en.wikipedia.org/wiki/MQTT) client interface is introduced, with support for metadata and for some remote control commands, thanks to the work [Till Zimmermann](https://github.com/tillz). MQTT is a fairly often used protocol in FOSS home-automation projects (as well as in commercial ones), and as Shairport Sync is often used in these setups, this adds client support for this protocol.
+* An [MQTT](https://en.wikipedia.org/wiki/MQTT) client interface is introduced, with support for metadata and for some remote control commands, thanks to the work of [Till Zimmermann](https://github.com/tillz). MQTT is a fairly often used protocol in FOSS home-automation projects (as well as in commercial ones), and as Shairport Sync is often used in these setups, this adds client support for this protocol.
 
 Version 3.2d62
 ====
@@ -477,6 +476,7 @@ Version 3.0.2
 Version 3.0.1
 ====
 This update fixes one alarming and potentially very noisy bug and restores the identification of Shairport Sync as "ShairportSync" so that TuneBlade recognises it as an open source application.
+
 **Bug Fixes**
 * Fixed a bug that was causing Shairport Sync to possibly make a very loud and alarming noise whenever an audio frame was missing.
 * In 2.8.6, a change was made to the way Shairport Sync identified itself, so that it could be recognised by TuneBlade as an open source application and treated preferentially. That change was inadventently lost in the transition from 2.8.6 to 3.0. Now it's restored.
